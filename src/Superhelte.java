@@ -1,14 +1,14 @@
 public class Superhelte {
     private String navn;
     private String superhelteNavn;
-    private boolean menneske;
-    private double regAar;
+    private boolean erMenneske;
+    private double oprindelseAar;
     private double styrke;
-    public Superhelte(String navn, String superhelteNavn, boolean menneske, double regAar, double styrke) {
+    public Superhelte(String navn, String superhelteNavn, boolean erMenneske, double oprindelseAar, double styrke) {
         this.navn = navn;
         this.superhelteNavn = superhelteNavn;
-        this.menneske = menneske;
-        this.regAar = regAar;
+        this.erMenneske = erMenneske;
+        this.oprindelseAar = oprindelseAar;
         this.styrke = styrke;
     }
 
@@ -18,11 +18,11 @@ public String getNavn() {
 public String getSuperhelteNavn(){
         return superhelteNavn;
 }
-public boolean getMenneske(){
-        return  menneske;
+public boolean getErMenneske(){
+        return  erMenneske;
 }
-public double getRegAar(){
-        return regAar;
+public double getOprindelseAar(){
+        return oprindelseAar;
 }
 public double getStyrke(){
         return styrke;
@@ -32,8 +32,8 @@ public double getStyrke(){
         return "Superhelte{" +
                 "navn='" + navn + '\'' +
                 ", superhelteNavn='" + superhelteNavn + '\'' +
-                ", menneske=" + menneske +
-                ", regAar=" + regAar +
+                ", erMenneske=" + erMenneske +
+                ", regAar=" + oprindelseAar +
                 ", styrke=" + styrke +
                 '}';
     }
