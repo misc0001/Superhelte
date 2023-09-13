@@ -1,15 +1,19 @@
-import java.util.ArrayList;
+    import java.util.ArrayList;
 
-public class Controller {
-    private Database db;
+    public class Controller {
+        public Database database;
 
-    public Controller(Database db) {
-        this.db = db;
+        public Controller(Database database) {
+            this.database = database;
+        }
+        public void nySuperhelt(String navn, String superhelteNavn, boolean erMenneske, double oprindelseAar, double styrke) {
+            database.nySuperhelt(navn, superhelteNavn, erMenneske, oprindelseAar, styrke);
+        }
+        public void søgSuperhelte(String navn) {
+            database.søgSuperhelte(navn);
+        }
+        public ArrayList<Superhelte>hentSuperhelt(){
+            return database.hentSuperhelt();
+        }
+
     }
-    public void nySuperhelt(String navn, String superhelteNavn, boolean erMenneske, double oprindelseAar, double styrke) {
-        db.nySuperhelt(navn, superhelteNavn, erMenneske, oprindelseAar, styrke);
-    }
-    public ArrayList<Superhelte>hentSuperhelt(){
-        return db.hentSuperhelt();
-    }
-}

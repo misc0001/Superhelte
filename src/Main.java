@@ -13,7 +13,7 @@ public class Main {
         int brugerValg = -1;
 
         while(brugerValg != 9) {
-            System.out.println("1. Opret Superhelt " + "2. Vis Superhelte " + "9. Afslut");
+            System.out.println("1. Opret Superhelt " + "2. Vis Superhelte " + "3. Find Superhelte " + "9. Afslut");
             brugerValg = keyboard.nextInt();
             keyboard.nextLine();
             håndterBrugerValg(brugerValg);
@@ -24,6 +24,8 @@ public class Main {
             nySuperhelt();
         else if (brugerValg == 2)
             visSuperhelte();
+        else if (brugerValg == 3)
+            søgSuperhelt();
     }
     public void nySuperhelt() {
         System.out.println("Din helts civile navn: ");
@@ -45,12 +47,21 @@ public class Main {
         controller.nySuperhelt(navn, superhelteNavn, erMenneske, oprindelseAar, styrke);
     }
     public void visSuperhelte() {
-        if (controller.hentSuperhelt().size() == 0)
+        if (controller.hentSuperhelt().isEmpty())
             System.out.println("ingen helte!");
         else {
             for (Superhelte sh: controller.hentSuperhelt()){
                 System.out.println(sh);
             }
+        }
+    }
+    public void søgSuperhelt() {
+        String søgeKriterie = keyboard.nextLine();
+        Superhelte superhelt = controller.database.findSuperhelt(søgeKriterie, "");
+        if (superhelt != null) {
+            System.out.println(superhelt);
+        } else {
+            System.out.println("ingen helte");
         }
     }
 }

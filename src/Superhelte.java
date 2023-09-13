@@ -33,10 +33,8 @@ public double getStyrke(){
                 "navn='" + navn + '\'' +
                 ", superhelteNavn='" + superhelteNavn + '\'' +
                 ", erMenneske=" + erMenneske +
-                ", regAar=" + oprindelseAar +
+                ", oprindelseAar=" + oprindelseAar +
                 ", styrke=" + styrke +
                 '}';
     }
 }
-
-
